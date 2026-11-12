@@ -1,3 +1,3 @@
 # Szakdolgozat
 # Bach György VJZDIG
-Szakdolgozati szkriptek repo
+Szakdolgozati szkriptek tárolója
