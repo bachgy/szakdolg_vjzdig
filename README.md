@@ -1,2 +1,3 @@
-# szakdolg_vjzdig
+# Szakdolgozat
+# Bach György VJZDIG
 Szakdolgozati szkriptek repo
