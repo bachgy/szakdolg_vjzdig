@@ -1,9 +1,6 @@
 #!/bin/bash
 set -euo pipefail
-
-# -------------------------------------------------------------------
 # Konfiguracio
-# -------------------------------------------------------------------
 
 SNAPSHOT_SCRIPT="/usr/share/doc/python3.11-ovirt-engine-sdk4/examples/list_vm_snapshots.py"
 
@@ -14,12 +11,8 @@ MAIL_FROM="felado@vallalat.hu"
 MAIL_SUBJECT="OLVM napi snapshot riport"
 
 MAIL_TO=(
-    "cimzett@vallalat.hu"
-)
-
-# -------------------------------------------------------------------
+    "cimzett@vallalat.hu")
 # Riport generalasa
-# -------------------------------------------------------------------
 
 REPORT_FILE=$(mktemp /tmp/olvm-snapshot-report.XXXXXX)
 trap 'rm -f "$REPORT_FILE"' EXIT
@@ -30,10 +23,7 @@ cd /usr/share/doc/python3.11-ovirt-engine-sdk4/examples/
 if [ ! -s "$REPORT_FILE" ]; then
     echo "Nincs snapshot az OLVM kornyezetben." > "$REPORT_FILE"
 fi
-
-# -------------------------------------------------------------------
 # Email kuldese
-# -------------------------------------------------------------------
 
 export SMTP_SERVER
 export SMTP_PORT
