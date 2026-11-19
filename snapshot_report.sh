@@ -2,7 +2,7 @@
 set -euo pipefail
 # Konfiguracio
 
-SNAPSHOT_SCRIPT="/usr/share/doc/python3.11-ovirt-engine-sdk4/examples/list_vm_snapshots.py"
+SC="/usr/share/doc/python3.11-ovirt-engine-sdk4/examples/list_vm_snapshots.py"
 
 SMTP_SERVER="emailszerver"
 SMTP_PORT="25"
@@ -17,7 +17,7 @@ MAIL_TO=(
 REPORT_FILE=$(mktemp /tmp/olvm-snapshot-report.XXXXXX)
 trap 'rm -f "$REPORT_FILE"' EXIT
 cd /usr/share/doc/python3.11-ovirt-engine-sdk4/examples/
-/usr/bin/python3.11 "$SNAPSHOT_SCRIPT" > "$REPORT_FILE"
+/usr/bin/python3.11 "$SC" > "$REPORT_FILE"
 
 # Ha nincs snapshot, az email akkor is menjen ki
 if [ ! -s "$REPORT_FILE" ]; then
